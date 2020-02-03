@@ -1,0 +1,14 @@
+@import '../../app.component';
+
+$panel-margin : 20px;
+
+.lerner-panel{
+    margin:$panel-margin;
+    width:calc(100%-(2*$panel-margin)px);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    i{
+        font-size: 2em;
+    }
+}

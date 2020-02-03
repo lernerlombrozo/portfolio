@@ -3,14 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { NavBarComponent } from './core/nav-bar/nav-bar.component';
+import { FooterComponent } from './core/footer/footer.component';
+import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AboutComponent,
+    ContactComponent,
+    PortfolioComponent,
+    NavBarComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
