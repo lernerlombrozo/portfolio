@@ -10,6 +10,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { HeaderComponent } from './core/header/header.component';
+import { ProjectComponent } from './portfolio/project/project.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HeaderComponent } from './core/header/header.component';
     PortfolioComponent,
     NavBarComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

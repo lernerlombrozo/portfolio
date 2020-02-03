@@ -1,0 +1,7 @@
+<div class="w3-third w3-container w3-margin-bottom">
+    <div class="bg-img" [ngStyle]="{'background-image': 'url(' + project.image + ')'}"  ></div>
+    <div class="w3-container w3-white force-size">
+      <a [href]="project.url" target="_blank"><b>{{project.name}}</b></a>
+      <p>{{project.description}}</p>
+    </div>
+</div>

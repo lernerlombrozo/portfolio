@@ -1,0 +1,40 @@
+.bg-img{
+    width:100%;
+    height:300px;
+    cursor: pointer;
+    
+    // cuts right or bottom
+    // background-size: cover;
+
+    // cuts top and bottom or left and right
+    background:center;
+    background-size: cover;
+
+    // looses proportionality;
+    // background-size: 100% 100%;
+
+    //adds bar right or bottom
+    // background-size: contain;
+    // background-repeat: no-repeat;
+
+    //adds bars top and bottom or left and right
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    // background-position: center center;
+
+    //duplicate
+    // background-size: contain;
+
+    &:hover {
+        opacity: 0.5;
+        filter: alpha(opacity=50); /* For IE8 and earlier */
+    }
+}
+
+.force-size{
+    min-height: 300px;
+    max-height: 300px;
+    a { 
+        text-decoration: none; 
+    }
+}
