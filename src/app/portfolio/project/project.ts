@@ -12,6 +12,7 @@ export interface Project {
         platform:'Ios'|'Android'|'pwa'|'spa',
         url?:string
     }[],
+    noQueryShow: boolean,
     url?:string,
     location?:string,
 }

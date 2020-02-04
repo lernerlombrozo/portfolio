@@ -10,14 +10,14 @@ export class PortfolioComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   fitpass:Project = {
     name:'Fitpass',
     backend: 'Rails',
     frontend: 'Ionic 3',
-    image:'https://fitpass.com/assets/landing/Landing_img_7-b9a10d6ebfc63fa4d4f2fddd5a62b5154af9b6b61aae6ccb1d31bc8d0cfa6e5e.jpg',
+    image:'https://fitpass.com/assets/FitpassGradiente-440a9da32de31ffc9b478cff79b712254a032a43c26f28dc84a960921c0a5d53.png',
+    // image:'https://fitpass.com/assets/landing/Landing_img_7-b9a10d6ebfc63fa4d4f2fddd5a62b5154af9b6b61aae6ccb1d31bc8d0cfa6e5e.jpg',
     position: 'Frontend developer',
     startDate: new Date('april 2018'),
     endDate:'present',
@@ -38,6 +38,7 @@ export class PortfolioComponent implements OnInit {
     ],
     url:'https://fitpass.com',
     location:'Mexico City, Mexico',
+    noQueryShow:true
   };
 
   mariappchi:Project = {
@@ -69,6 +70,7 @@ export class PortfolioComponent implements OnInit {
     ],
     url:'https://mariappchi.mx',
     location:'Mexico City, Mexico',
+    noQueryShow:true
   }
 
   pongline:Project = {
@@ -79,7 +81,7 @@ export class PortfolioComponent implements OnInit {
     position: 'Programmer',
     startDate: new Date('january 2019'),
     endDate:'present',
-    description: 'My first videogame had to be made with Ionic with a firebase cloud firestore database. It allows two users, on two different devices to play the clasic game "Pong" online.',
+    description: 'My first videogame had to be made with Ionic with a firebase cloud firestore database. It allows two users on two different devices to play the classic game "Pong" online.',
     technologies: ['firebase', 'ionic', 'canvas', 'ionic native', 'cordova'],
     platforms:[{
       platform:'Android',
@@ -87,11 +89,76 @@ export class PortfolioComponent implements OnInit {
     }
     ],
     location:'Edmonton, Alberta, Canada',
-    url:'https://play.google.com/store/apps/details?id=free.pong.line'
-  }
+    url:'https://play.google.com/store/apps/details?id=free.pong.line',
+    noQueryShow:true
+  };
+
+  petBell:Project = {
+    name:'Petbell',
+    backend: 'Firebase',
+    frontend: 'Ionic 3',
+    image:'https://lh3.googleusercontent.com/tYXbz2QQLScxQsAyhg3Xv4PoH0YrntsvdrMgkB6opo7JgGaXhs3QJnTgukgE505ac2vo=s180-rw',
+    position: 'Freelance',
+    startDate: new Date('june 2018'),
+    endDate:new Date('august 2018'),
+    description: 'Petbell is an app I did for a friend, it works as a social network for pets and connects pet owners to vets across Mexico.',
+    technologies: ['firebase', 'push notifications', 'ionic', 'ionic native', 'cordova'],
+    platforms:[{
+      platform:'Android',
+      url:'https://play.google.com/store/apps/details?id=io.pet.bell'
+    }
+    ],
+    url:'https://play.google.com/store/apps/details?id=io.pet.bell',
+    location:'Mexico City, Mexico',
+    noQueryShow:false
+  };
+
+  secretHitman:Project = {
+    name:'Secret Hitman',
+    backend: 'Node.jss',
+    frontend: 'Angular 7',
+    image:'https://cdn.vapid.site/sites/a67e0c72-4902-4365-a899-3386df73c2c4/uploads/social-86ac14f48287602cb33b756d4f8fcfaa.jpg',
+    position: 'Hobbyist',
+    startDate: new Date('march 2019'),
+    endDate:'present',
+    description: 'Secret Hitman is an online version of the popular game "Secret hitler". It offers a multiplayer experience for 10 simultaneous users.',
+    technologies: ['node.js','express', 'MongoDB', 'Angular 7', 'socket.io', 'Heroku'],
+    platforms:[{
+      platform:'spa',
+      url:'https://sec-hit.web.app/'
+    }
+    ],
+    url:'https://sec-hit.web.app/',
+    location:'Edmonton, Alberta, Canada',
+    noQueryShow:true
+  };
+
+  townDoll:Project = {
+    name:'Towndoll',
+    backend: 'Node.jss',
+    frontend: 'Angular 7',
+    image:'https://towndoll.s3.us-east-2.amazonaws.com/media/logos/TD+logo+squared-01.png',
+    position: 'Hobbyist',
+    startDate: new Date('march 2019'),
+    endDate:'present',
+    description: 'Towndoll is set to be a platform for businesses to give and manage loyalty points, communicate with their clients through push notifications and emails and for statistical analysis.',
+    technologies: ['node.js','express', 'MongoDB', 'Angular 7','Ionic 4', 'Cordova', 'socket.io', 'Heroku', 'handlebars.js', 'S3'],
+    platforms:[{
+      platform:'spa',
+      url:'https://towndoll.com'
+    },
+    {
+      platform:'pwa',
+      url:'https://towndoll-app.web.app/signin'
+    }
+    ],
+    url:'https://towndoll.com',
+    location:'Edmonton, Alberta, Canada',
+    noQueryShow:true
+  };
 
   myApps: Project[] =[
-    this.fitpass, this.mariappchi, this.pongline, this.fitpass, this.fitpass, this.fitpass
+    this.mariappchi, this.fitpass, this.pongline, this.townDoll, this.secretHitman, this.petBell
   ]
 
 }

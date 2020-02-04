@@ -9,7 +9,6 @@ import { ContactComponent } from './contact/contact.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { HeaderComponent } from './core/header/header.component';
 import { ProjectComponent } from './portfolio/project/project.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { ProjectComponent } from './portfolio/project/project.component';
     PortfolioComponent,
     NavBarComponent,
     FooterComponent,
-    HeaderComponent,
     ProjectComponent
   ],
   imports: [
