@@ -1,0 +1,6 @@
+<div class="dropdown">
+    <button class="w3-button" [ngClass]="{'w3-black':selected, 'w3-white':!selected}"><i [class]="iconClass"></i>{{text}}</button>
+    <div class="dropdown-content">
+      <p *ngFor="let option of options; let i=index" (click)="select(i)">{{option}}</p>
+    </div>
+</div>

@@ -5,11 +5,11 @@
   <h1><b>My Portfolio</b></h1>
   <div class="w3-section w3-bottombar w3-padding-16">
     <span class="w3-margin-right">Filter:</span> 
-    <button class="w3-button w3-black">ALL</button>
-    <button class="w3-button w3-white"><i class="fab fa-html5 w3-margin-right"></i>Frontend</button>
-    <button class="w3-button w3-white w3-hide-small"><i class="fab fa-node-js w3-margin-right"></i>Backend</button>
-    <button class="w3-button w3-white w3-hide-small"><i class="fa fa-microchip w3-margin-right"></i>Technology</button>
-    <button class="w3-button w3-white w3-hide-small"><i class="fa fa-rocket w3-margin-right"></i>App</button>
+    <app-dropdown [text]="'All'" [selected]="selected==0"></app-dropdown>
+    <app-dropdown [text]="'Frontend'" [options]="frontend" [iconClass]="'fab fa-html5 w3-margin-right'" [selected]="selected==1"></app-dropdown>
+    <app-dropdown [text]="'Backend'" [options]="backend" [iconClass]="'fab fa-node-js w3-margin-right'" [selected]="selected==2"></app-dropdown>
+    <!-- <app-dropdown [text]="'Technology'" [options]="technologies" [iconClass]="'fa fa-microchip w3-margin-right'" [selected]="selected==3"></app-dropdown> -->
+    <app-dropdown [text]="'App'" [options]="apps" [iconClass]="'fa fa-rocket w3-margin-right'" [selected]="selected==4"></app-dropdown>
   </div>
   </div>
 </header>

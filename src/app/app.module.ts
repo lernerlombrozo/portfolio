@@ -10,6 +10,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { ProjectComponent } from './portfolio/project/project.component';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { DropdownComponent } from './shared/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { ProjectComponent } from './portfolio/project/project.component';
     PortfolioComponent,
     NavBarComponent,
     FooterComponent,
-    ProjectComponent
+    ProjectComponent,
+    DropdownDirective,
+    DropdownComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

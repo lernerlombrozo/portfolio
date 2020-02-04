@@ -12,6 +12,15 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit() {}
 
+  frontend = ['Angular','Bootstrap','CSS','HTML','Ionic','SCSS','Vue.js'];
+  backend = ['Express.js','Firebase', 'Node.js'];
+  database = ['MongoDB', 'Cloud Firestore', 'Realtime Database'];
+  hosting = ['Elastic Beanstalk', 'Firebase', 'S3'];
+  technologies=[...this.frontend,...this.backend,...this.database,...this.hosting];
+  apps=["Android", "Ios", "SPA", "PWA"];
+
+  selected=0;
+
   fitpass:Project = {
     name:'Fitpass',
     backend: 'Rails',
