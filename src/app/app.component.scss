@@ -27,6 +27,12 @@ body,h1,h2,h3,h4,h5,h6,a,b,p {
     z-index: 1;
 }
 
+.dropdown-item{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /* Links inside the dropdown */
 .dropdown-content a {
     color: black;
@@ -36,7 +42,9 @@ body,h1,h2,h3,h4,h5,h6,a,b,p {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
