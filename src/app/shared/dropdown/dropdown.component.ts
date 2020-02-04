@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class DropdownComponent implements OnInit {
 
   @Input() text:string;
-  @Input() options:string[];
+  @Input() options:{name:string,iconClass:string}[];
   @Input() iconClass:string;
   @Input() selected:boolean;
   

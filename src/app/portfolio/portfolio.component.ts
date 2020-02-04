@@ -12,12 +12,12 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit() {}
 
-  frontend = ['Angular','Bootstrap','CSS','HTML','Ionic','SCSS','Vue.js'];
-  backend = ['Express.js','Firebase', 'Node.js'];
+  frontend = [{name:'Angular',iconClass:'fab fa-angular w3-margin-right'},{name:'Bootstrap',iconClass:'fab fa-bootstrap w3-margin-right'},{name:'CSS',iconClass:'fab fa-css3 w3-margin-right'},{name:'HTML',iconClass:'fab fa-html5 w3-margin-right'},{name:'Ionic',iconClass:'fa fa-atom w3-margin-right'},{name:'SCSS',iconClass:'fab fa-css3-alt w3-margin-right'},{name:'Vue.js',iconClass:'fab fa-vuejs w3-margin-right'}];
+  backend = [{name:'Express.js',iconClass:'fab fa-node w3-margin-right'},{name:'Firebase',iconClass:'fa fa-fire w3-margin-right'}, {name:'Node.js',iconClass:'fab fa-node-js w3-margin-right'}];
   database = ['MongoDB', 'Cloud Firestore', 'Realtime Database'];
   hosting = ['Elastic Beanstalk', 'Firebase', 'S3'];
   technologies=[...this.frontend,...this.backend,...this.database,...this.hosting];
-  apps=["Android", "Ios", "SPA", "PWA"];
+  apps=[{name:'Android',iconClass:'fab fa-android w3-margin-right'}, {name:'Ios',iconClass:'fab fa-app-store-ios w3-margin-right'}, {name:'SPA',iconClass:'fas fa-globe w3-margin-right'}, {name:'PWA',iconClass:'fas fa-globe w3-margin-right'}];
 
   selected=0;
 
