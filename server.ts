@@ -64,6 +64,7 @@ const mailConfig = {
       }
   };
   transporter = nodemailer.createTransport(mailConfig);
+  console.log('running in development sending emails with smtp')
 }
 
 const HBSOptions = {
