@@ -53,14 +53,16 @@ if (process.env.NODE_ENV === 'production' ){
           api_key : process.env.SENDGRID_API_KEY,
       }
   }));
+  console.log('running in prod sending emails with sendgrid')
 } else {
 const mailConfig = {
       host: 'smtp.ethereal.email',
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-          user: process.env.ETHEREAL_EMAIL,
-          pass: process.env.ETHEREAL_PASSWORD
+          // this data is not important. Safe to commit. Generate your own account here https://ethereal.email/create
+          user: "quinton.jacobson@ethereal.email",
+          pass: "cEaEMwZAAczTg9rcwM"
       }
   };
   transporter = nodemailer.createTransport(mailConfig);
@@ -83,17 +85,24 @@ transporter.use('compile', hbs(HBSOptions));
 
 // Example Express Rest API endpoints
 // app.get('/api/**', (req, res) => { });
-app.get('/api/mail', (req, res) => {
-  const name = 'david'//req.body.name;
-  const email = 'dlerner@ualberta.ca'//req.body.email;
+app.post('/api/mail', (req, res) => {
+  const name = req.body.model.name;
+  const email = req.body.model.email;
+  const message = req.body.model.message;
   const myEmail = "lernerlombrozo@gmail.com";
-  const message = "test message"//req.body.message;
   const trackId = new Date().getTime();
   const toDavidOptions={
     from: `"${name}" <${email}>`,
     to:myEmail,
     subject:"New message from website",
     text: message,
+    template: 'new-message',
+    context: {
+      name: "My Lord",
+      dlLogo: `http://${req.headers.host}/assets/img/DL.png?trackId=${trackId}`,
+      message,
+      replyEmail: myEmail,
+    },
   };
   const toClientOptions={
     from: '"David Lerner 👻" <lernerlombrozo@gmail.com>', // sender address
@@ -117,7 +126,7 @@ app.get('/api/mail', (req, res) => {
   }).catch(err=>{
       console.log('ERROR sending email',err);
   })
-  res.status(200).json({message:"Email sent"});
+  res.status(200).json({message:"Tanks for contacting me, I'll get back to you shortly."});
 });
 
 // All regular routes use the Universal engine
