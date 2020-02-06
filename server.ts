@@ -18,7 +18,11 @@
 import 'zone.js/dist/zone-node';
 
 import * as express from 'express';
+import * as nodemailer from 'nodemailer'; 
+import * as hbs from 'nodemailer-express-handlebars';
+import * as sendgridTransport from 'nodemailer-sendgrid-transport';
 import {join} from 'path';
+import { Subject } from 'rxjs';
 
 // Express server
 const app = express();
@@ -40,8 +44,82 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', DIST_FOLDER);
 
+// Setting email sender
+let transporter;
+if (process.env.NODE_ENV === 'production' ){
+  console.log('in production')
+  transporter = nodemailer.createTransport(sendgridTransport({
+      auth: {
+          api_key : process.env.SENDGRID_API_KEY,
+      }
+  }));
+} else {
+const mailConfig = {
+      host: 'smtp.ethereal.email',
+      port: 587,
+      secure: false, // true for 465, false for other ports
+      auth: {
+          user: process.env.ETHEREAL_EMAIL,
+          pass: process.env.ETHEREAL_PASSWORD
+      }
+  };
+  transporter = nodemailer.createTransport(mailConfig);
+}
+
+const HBSOptions = {
+  viewEngine : {
+      extname: '.hbs', // handlebars extension
+      layoutsDir: 'views/layouts', // location of handlebars templates
+      partialsDir: 'views', // location of your subtemplates aka. header, footer etc
+      defaultLayout: 'main', // name of main template
+      // defaultLayout: false
+  },
+  viewPath: 'views',
+  extName: '.hbs'
+};
+
+transporter.use('compile', hbs(HBSOptions));
+
 // Example Express Rest API endpoints
 // app.get('/api/**', (req, res) => { });
+app.get('/api/mail', (req, res) => {
+  const name = 'david'//req.body.name;
+  const email = 'dlerner@ualberta.ca'//req.body.email;
+  const myEmail = "lernerlombrozo@gmail.com";
+  const message = "test message"//req.body.message;
+  const trackId = new Date().getTime();
+  const toDavidOptions={
+    from: `"${name}" <${email}>`,
+    to:myEmail,
+    subject:"New message from website",
+    text: message,
+  };
+  const toClientOptions={
+    from: '"David Lerner 👻" <lernerlombrozo@gmail.com>', // sender address
+    to: "email", // list of receivers
+    subject: "Thanks for reaching out!",
+    template: 'new-message',
+    context: {
+      name,
+      dlLogo: `http://${req.headers.host}/assets/img/DL.png?trackId=${trackId}`,
+      message,
+      replyEmail: myEmail,
+    },
+  };
+  transporter.sendMail(toDavidOptions).then(info=>{
+      if(process.env.NODE_ENV !== 'production') console.log('Preview URL: ' + nodemailer.getTestMessageUrl(info));
+  }).catch(err=>{
+      console.log('ERROR sending email',err);
+  })
+  transporter.sendMail(toClientOptions).then(info=>{
+      if(process.env.NODE_ENV !== 'production') console.log('Preview URL: ' + nodemailer.getTestMessageUrl(info));
+  }).catch(err=>{
+      console.log('ERROR sending email',err);
+  })
+  res.status(200).json({message:"Email sent"});
+});
+
+// All regular routes use the Universal engine
 // Serve static files from /browser
 app.get('*.*', express.static(DIST_FOLDER, {
   maxAge: '1y'

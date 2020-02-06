@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Demystifying Email Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body style="margin: 0; padding: 0;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%"> 
+        <tr>
+            <td style="padding: 10px 0 30px 0;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border: 1px solid #cccccc; border-collapse: collapse;">
+                    {{!-- Header --}}
+                    <tr>
+                        <td align="center" bgcolor="#FFD700" style="padding: 40px 0 30px 0; color: #535353; font-size: 28px; font-weight: bold; font-family: Arial, sans-serif;">
+                            <img src="{{dlLogo}}" alt="Towndoll" width="300" style="display: block;" />
+                        </td>
+                    </tr>
+                    {{!-- Body --}}
+                    <tr>
+                        <td bgcolor="#f1f1f1" style="padding: 40px 30px 40px 30px;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td style="color: #535353; font-family: Arial, sans-serif; font-size: 24px;">
+                                        <b>Hello {{name}},</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td width="260" valign="top" style="padding: 20px 0 30px 0; color: #535353; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;">
+                                                    {{{body}}}
+                                                    <p color="#535353">If you received this in error, you can safely ignore it.</p>
+                                                    <p color="#535353" style="font-size:12px; padding: 20px 0 0 0">You can reply to this message, or email <a href="mailto:{{replyEmail}}?Subject=Reset%20password">{{replyEmail}}</a> if you have questions.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="260" valign="top" style="padding: 20px 0 30px 0; color: #535353; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;">
+                                                    Thanks!
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    {{!-- Footer --}}
+                    <tr>
+                        <td bgcolor="#3EC3F6" style="padding: 30px 30px 30px 30px;">
+                            <table style="height:70px;width:183px" border="0" cellspacing="0" cellpadding="0" align="center"><tbody><tr style="height:41px"><td style="width:185px;height:41px">
+                                    <a href="https://www.facebook.com/Towndoll-108192577400815" target="_blank" color="#3EC3F6">
+                                        <img src="https://towndoll.s3.us-east-2.amazonaws.com/media/icons/facebookIcon.png" alt="Facebook" width="48" height="48" border="0">
+                                    </a>&nbsp; 
+                                    <a href="https://twitter.com/towndoll1" target="_blank" color="#3EC3F6">
+                                        <img src="https://towndoll.s3.us-east-2.amazonaws.com/media/icons/twitterIcon.png" alt="Twitter" width="48" height="48" border="0">
+                                    </a>&nbsp; 
+                                    <a href="https://www.instagram.com/town.doll" target="_blank" color="#3EC3F6">
+                                        <img src="https://towndoll.s3.us-east-2.amazonaws.com/media/icons/instagramIcon.png" alt="Instagram" width="48" height="48" border="0">
+                                        </a>&nbsp;
+                                    </td></tr></tbody></table>
+                            <table border="0" width="auto" cellspacing="0" cellpadding="0" align="center"><tbody><tr><td>&nbsp;</td>
+                            <td><a style="text-decoration:none;color:#535353">Download our mobile app</a></td>
+                            <td width="4">&nbsp;</td>
+                            <td>&nbsp;</td>
+                            </tr></tbody></table>
+                            <table border="0" width="auto" cellspacing="0" cellpadding="0" align="center"><tbody><tr><td>&nbsp;</td>
+                            <tr style="height:18px"><td style="height:18px" align="center">&nbsp;</td>
+                            <tr style="height:16px"><td style="width:100%;height:41px;color:#535353" align="center">
+                                <a style="font-family:Roboto,Helvetica,Arial,sans-serif;font-size:12px;text-align:start" href="https://towndoll.s3.us-east-2.amazonaws.com/media/icons/androidIcon.png" rel="noopener" color="#3EC3F6" target="_blank">
+                                    <img src="https://towndoll.s3.us-east-2.amazonaws.com/media/icons/androidIcon.png" width="48" height="48" border="0">
+                                </a>
+                                <a href="https://towndoll.s3.us-east-2.amazonaws.com/media/icons/appleIcon.png" rel="noopener" color="#3EC3F6" target="_blank">
+                                    <img src="https://towndoll.s3.us-east-2.amazonaws.com/media/icons/appleIcon.png" width="48" height="48" border="0">
+                                </a>
+                            </td></tr>
+                            <tr style="height:11px"><td style="height:11px" align="center">&nbsp;</td></tr>
+                            <tr style="height:38px"><td style="height:38px" align="center"><span style="color:#75787d;font-size:12px;line-height:18px;font-family:'Roboto',Helvetica,Arial,sans-serif">© 2020 Towndoll. All Rights Reserved.<br> Edmonton, Alberta, Canada</span></td></tr>
+                            <tr style="height:19px"><td style="height:19px" align="center">&nbsp;</td></tr>
+                            <tr style="height:19px"><td style="height:19px" align="center">
+                                <span style="color:#75787d;font-size:12px;line-height:18px"> 
+                                    <a style="color:#75787d;text-decoration:underline;font-family:'Roboto',Helvetica,Arial,sans-serif" href="https://www.freelancer.com/campaign/0MEE850202806/?l=%2Fpage.php%3Fp%3Dinfo%252Fprivacy%26utm_campaign%3Dbtw%26utm_medium%3Demail%26utm_source%3Dlink6&amp;uniqid=26585393-42475-5e2b1829-ae46f681&amp;linkid=5" target="_blank">
+                                        Privacy Policy
+                                    </a> | 
+                                    <a style="color:#75787d;text-decoration:underline;font-family:'Roboto',Helvetica,Arial,sans-serif" href="https://www.freelancer.com/campaign/0MEE850202807/?l=%2Fpage.php%3Fp%3Dinfo%252Fterms%26utm_campaign%3Dbtw%26utm_medium%3Demail%26utm_source%3Dlink7&amp;uniqid=26585393-42475-5e2b1829-ae46f681&amp;linkid=6" target="_blank">
+                                        Terms and Conditions
+                                    </a> | 
+                                    {{#if business}}
+                                        <a style="color:#75787d;text-decoration:underline;font-family:'Roboto',Helvetica,Arial,sans-serif" href="https://www.freelancer.com/campaign/0MEE850201500/?l=https%3A%2F%2Fwww.freelancer.com%2Fusers%2Femail%2Fsubscriptions.php%3Ftoken%3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkZyZWVsYW5jZXJcXEdBRlxcQ29yZVxcSldUXFxKV1QifQ.eyJpZCI6IjI2NTg1MzkzIiwic3ViIjoidW5zdWJzY3JpYmUiLCJpYXQiOjE1Nzk4ODI1Mzd9.8Eddfnjv8RgY5Bvkw-qATiGyk5jw4AQCG_331dcYIJA%26type%3Dmarketing&amp;uniqid=26585393-42475-5e2b1829-ae46f681&amp;linkid=7" target="_blank">
+                                            Unsubscribe from {{business}}
+                                        </a> | 
+                                    {{/if}}
+                                    <a style="color:#75787d;text-decoration:underline;font-family:'Roboto',Helvetica,Arial,sans-serif" href="https://www.freelancer.com/campaign/0MEE850201500/?l=https%3A%2F%2Fwww.freelancer.com%2Fusers%2Femail%2Fsubscriptions.php%3Ftoken%3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkZyZWVsYW5jZXJcXEdBRlxcQ29yZVxcSldUXFxKV1QifQ.eyJpZCI6IjI2NTg1MzkzIiwic3ViIjoidW5zdWJzY3JpYmUiLCJpYXQiOjE1Nzk4ODI1Mzd9.8Eddfnjv8RgY5Bvkw-qATiGyk5jw4AQCG_331dcYIJA%26type%3Dmarketing&amp;uniqid=26585393-42475-5e2b1829-ae46f681&amp;linkid=7" target="_blank">
+                                        Unsubscribe
+                                        {{#if business}}
+                                            from Towndoll
+                                        {{/if}}
+                                    </a> | 
+                                    <a style="color:#75787d;text-decoration:underline;font-family:'Roboto',Helvetica,Arial,sans-serif" href="https://www.freelancer.com/campaign/0MEE850202808/?l=%2Fsupport%3F%26utm_campaign%3Dbtw%26utm_medium%3Demail%26utm_source%3Dlink8&amp;uniqid=26585393-42475-5e2b1829-ae46f681&amp;linkid=8" target="_blank">
+                                        Get Support
+                                    </a> </span></td></tr>
+                            <tr style="height:16px"><td style="height:16px" width="100%">&nbsp;</td></tr>
+                            </tbody>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from './project/project';
+import { NavBarService } from '../core/nav-bar/nav-bar.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -8,7 +9,7 @@ import { Project } from './project/project';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+  constructor(public navBarService: NavBarService) { }
 
   ngOnInit() {}
 
@@ -169,5 +170,9 @@ export class PortfolioComponent implements OnInit {
   myApps: Project[] =[
     this.mariappchi, this.fitpass, this.pongline, this.townDoll, this.secretHitman, this.petBell
   ]
+
+  openNavBar(){
+    this.navBarService.open();
+  }
 
 }

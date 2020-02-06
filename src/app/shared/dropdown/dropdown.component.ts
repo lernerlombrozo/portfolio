@@ -18,4 +18,9 @@ export class DropdownComponent implements OnInit {
     console.log(this.selected)
   }
 
+  select(index){
+    // must emmit index
+    console.log(index);
+  }
+
 }
